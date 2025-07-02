@@ -1,6 +1,14 @@
 const { initializeDatabase } = require("./db/db.connect");
 const Book = require("./models/books.models");
 const express = require("express");
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 require("dotenv").config();
 const app = express();
 app.use(express.json());
