@@ -8,10 +8,10 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
 require("dotenv").config();
 const app = express();
 app.use(express.json());
+app.use(cors(corsOptions));
 
 initializeDatabase();
 
